@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35208.52
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VR.PreventSleepingService", "VR.PreventSleepingService\VR.PreventSleepingService.csproj", "{814182E7-52B6-49D4-8DB2-A9643366A1B1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VR.PowerUtilities", "VR.PowerUtilities\VR.PowerUtilities.csproj", "{D3B0C9EB-3753-4111-B772-28F089CFB3D6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{814182E7-52B6-49D4-8DB2-A9643366A1B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{814182E7-52B6-49D4-8DB2-A9643366A1B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{814182E7-52B6-49D4-8DB2-A9643366A1B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{814182E7-52B6-49D4-8DB2-A9643366A1B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D3B0C9EB-3753-4111-B772-28F089CFB3D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3B0C9EB-3753-4111-B772-28F089CFB3D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3B0C9EB-3753-4111-B772-28F089CFB3D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3B0C9EB-3753-4111-B772-28F089CFB3D6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AE4E727F-3846-42BF-BFF8-63D204BBF49B}
+	EndGlobalSection
+EndGlobal
