@@ -9,6 +9,8 @@ namespace VR.PreventSleepingService
             base.OnStart(args);
 
             PowerUtilities.PowerUtilities.PreventPowerSave();
+
+            Console.ReadLine();
         }
     }
 }
