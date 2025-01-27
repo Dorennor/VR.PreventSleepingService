@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VR.PreventSleepingService",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VR.PowerUtilities", "VR.PowerUtilities\VR.PowerUtilities.csproj", "{D3B0C9EB-3753-4111-B772-28F089CFB3D6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VR.PreventSleepingService.Wpf", "VR.PreventSleepingService.Wpf\VR.PreventSleepingService.Wpf.csproj", "{9BC36EFA-40D8-4FAD-A9B2-68FC44B3559B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{D3B0C9EB-3753-4111-B772-28F089CFB3D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D3B0C9EB-3753-4111-B772-28F089CFB3D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D3B0C9EB-3753-4111-B772-28F089CFB3D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9BC36EFA-40D8-4FAD-A9B2-68FC44B3559B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9BC36EFA-40D8-4FAD-A9B2-68FC44B3559B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9BC36EFA-40D8-4FAD-A9B2-68FC44B3559B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9BC36EFA-40D8-4FAD-A9B2-68FC44B3559B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
