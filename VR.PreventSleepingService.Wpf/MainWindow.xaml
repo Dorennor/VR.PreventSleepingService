@@ -5,7 +5,4 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <CheckBox x:Name="SwitchAutoStart" Height="30" Width="100" Content="Startup" Unchecked="SwitchAutoStart_OnUntoggled" Checked="SwitchAutoStart_OnToggled" />
-    </Grid>
 </Window>

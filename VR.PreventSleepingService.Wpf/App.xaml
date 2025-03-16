@@ -1,7 +1,7 @@
 ﻿<Application x:Class="VR.PreventSleepingService.Wpf.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             Startup="App_Startup">
+             Startup="OnStartup">
     <Application.Resources>
     </Application.Resources>
 </Application>
