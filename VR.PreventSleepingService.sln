@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.11.35208.52
+# Visual Studio Version 18
+VisualStudioVersion = 18.6.11806.211 stable
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VR.PreventSleepingService", "VR.PreventSleepingService\VR.PreventSleepingService.csproj", "{814182E7-52B6-49D4-8DB2-A9643366A1B1}"
 EndProject
@@ -10,6 +10,11 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VR.PreventSleepingService.Wpf", "VR.PreventSleepingService.Wpf\VR.PreventSleepingService.Wpf.csproj", "{9BC36EFA-40D8-4FAD-A9B2-68FC44B3559B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VR.PreventSleepingService.Service", "VR.PreventSleepingService.Service\VR.PreventSleepingService.Service.csproj", "{ADF19AED-FE3B-4815-983A-8B34AF314141}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{28A3D46F-AE66-4137-B2FB-961B57AC685C}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

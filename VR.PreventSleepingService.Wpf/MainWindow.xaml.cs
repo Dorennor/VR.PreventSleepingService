@@ -1,7 +1,5 @@
 ﻿using System.Windows;
 
-using Microsoft.Win32;
-
 namespace VR.PreventSleepingService.Wpf
 {
     public partial class MainWindow : Window

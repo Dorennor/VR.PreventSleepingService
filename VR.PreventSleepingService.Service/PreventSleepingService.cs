@@ -1,5 +1,4 @@
 ﻿using System.Diagnostics;
-using System.ServiceProcess;
 using System.Timers;
 
 using Timer = System.Timers.Timer;
@@ -85,7 +84,9 @@ namespace VR.PreventSleepingService.Service
             if (processes.Length > 0)
             {
                 if (processes[0].PriorityClass != ProcessPriorityClass.Normal)
+                {
                     processes[0].PriorityClass = ProcessPriorityClass.Normal;
+                }
             }
             else
             {

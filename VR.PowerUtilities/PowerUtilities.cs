@@ -2,40 +2,31 @@
 
 namespace VR.PowerUtilities
 {
-    public static class PowerUtilities
+    public static partial class PowerUtilities
     {
-        [Flags]
-        public enum EXECUTION_STATE : uint
-        {
-            ES_AWAYMODE_REQUIRED = 0x00000040,
-            ES_CONTINUOUS = 0x80000000,
-            ES_DISPLAY_REQUIRED = 0x00000002,
-            ES_SYSTEM_REQUIRED = 0x00000001
-            // Legacy flag, should not be used.
-            // ES_USER_PRESENT = 0x00000004
-        }
+        [LibraryImport("kernel32.dll", SetLastError = true)]
+        private static partial uint SetThreadExecutionState(ExecutionState esFlags);
 
-        [DllImport("kernel32.dll", CharSet = CharSet.Auto, SetLastError = true)]
-        private static extern uint SetThreadExecutionState(EXECUTION_STATE esFlags);
-
-        private static AutoResetEvent _event = new AutoResetEvent(false);
+        private static readonly AutoResetEvent Event = new AutoResetEvent(false);
 
         public static void PreventPowerSave()
         {
             new TaskFactory().StartNew(() =>
                 {
-                    SetThreadExecutionState(
-                        EXECUTION_STATE.ES_CONTINUOUS
-                        | EXECUTION_STATE.ES_DISPLAY_REQUIRED
-                        | EXECUTION_STATE.ES_SYSTEM_REQUIRED);
-                    _event.WaitOne();
+                    SetThreadExecutionState(ExecutionState.EsContinuous |
+                                            ExecutionState.EsDisplayRequired |
+                                            ExecutionState.EsSystemRequired
+                    );
+
+                    Event.WaitOne();
                 },
-                TaskCreationOptions.LongRunning);
+                TaskCreationOptions.LongRunning
+            );
         }
 
         public static void Shutdown()
         {
-            _event.Set();
+            Event.Set();
         }
     }
 }

@@ -1,6 +1,4 @@
-﻿using System.ServiceProcess;
-
-namespace VR.PreventSleepingService
+﻿namespace VR.PreventSleepingService
 {
     public class Program
     {
