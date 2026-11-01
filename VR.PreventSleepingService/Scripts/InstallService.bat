@@ -1,1 +1,0 @@
-﻿sc.exe create "VR.PreventSleepingService" binPath= "D:\Programs\VR.HDRToSDRService\VR.PreventSleepingService.exe"
