@@ -1,5 +1,7 @@
 using System.Runtime.InteropServices;
+
 using VR.KeepAwake.Tray;
+
 using Xunit;
 
 namespace VR.KeepAwake.Tests;

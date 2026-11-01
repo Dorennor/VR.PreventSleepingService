@@ -1,4 +1,5 @@
 using System.Buffers.Binary;
+
 using static VR.KeepAwake.Tray.NativeMethods;
 
 namespace VR.KeepAwake.Tray;

@@ -1,11 +1,12 @@
-﻿using System.Threading;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Interop;
 using System.Windows.Media;
 using System.Windows.Threading;
+
 using VR.KeepAwake.Settings;
 using VR.KeepAwake.Tray;
 using VR.KeepAwake.Views;
+
 using Wpf.Ui.Appearance;
 using Wpf.Ui.Markup;
 

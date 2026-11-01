@@ -1,5 +1,6 @@
 ﻿using System.Runtime.InteropServices;
 using System.Windows.Threading;
+
 using static VR.KeepAwake.Tray.NativeMethods;
 
 namespace VR.KeepAwake.Tray;
@@ -193,6 +194,7 @@ internal sealed class TrayIcon : IDisposable
                     case WM_LBUTTONUP:
                         Post(ToggleRequested);
                         break;
+
                     case WM_RBUTTONUP:
                         ShowMenu();
                         break;
@@ -254,9 +256,11 @@ internal sealed class TrayIcon : IDisposable
             case MenuToggle:
                 Post(ToggleRequested);
                 break;
+
             case MenuSettings:
                 Post(SettingsRequested);
                 break;
+
             case MenuExit:
                 Post(ExitRequested);
                 break;

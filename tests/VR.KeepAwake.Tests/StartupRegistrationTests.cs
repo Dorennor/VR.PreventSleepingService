@@ -1,5 +1,7 @@
 using Microsoft.Win32;
+
 using VR.KeepAwake.Settings;
+
 using Xunit;
 
 namespace VR.KeepAwake.Tests;
