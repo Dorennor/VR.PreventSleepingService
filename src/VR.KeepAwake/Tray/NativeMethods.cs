@@ -66,12 +66,12 @@ internal static partial class NativeMethods
         public uint uFlags;
         public uint uCallbackMessage;
         public nint hIcon;
-        public char szTip[128];
+        public fixed char szTip[128];
         public uint dwState;
         public uint dwStateMask;
-        public char szInfo[256];
+        public fixed char szInfo[256];
         public uint uVersion;
-        public char szInfoTitle[64];
+        public fixed char szInfoTitle[64];
         public uint dwInfoFlags;
         public Guid guidItem;
         public nint hBalloonIcon;
