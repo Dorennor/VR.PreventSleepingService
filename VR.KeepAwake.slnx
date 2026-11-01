@@ -1,4 +1,8 @@
 <Solution>
+  <Folder Name="/Scripts/">
+    <File Path="Scripts/Install.cmd" />
+    <File Path="Scripts/Uninstall.cmd" />
+  </Folder>
   <Folder Name="/src/">
     <Project Path="src/VR.KeepAwake/VR.KeepAwake.csproj" />
   </Folder>

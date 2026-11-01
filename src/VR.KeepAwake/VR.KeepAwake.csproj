@@ -16,6 +16,8 @@
   <!-- Keeps the idle footprint small. -->
   <PropertyGroup>
     <InvariantGlobalization>true</InvariantGlobalization>
+    <!-- WPF asks for cultures such as en-US when it lays out text. Without this each request throws, even though WPF catches it. -->
+    <PredefinedCulturesOnly>false</PredefinedCulturesOnly>
     <ConcurrentGarbageCollection>false</ConcurrentGarbageCollection>
     <TieredPGO>false</TieredPGO>
     <SatelliteResourceLanguages>en</SatelliteResourceLanguages>
@@ -26,8 +28,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="Assets\tray-*.ico" CopyToOutputDirectory="PreserveNewest" />
+    <EmbeddedResource Include="Assets\tray-*.ico" LogicalName="%(Filename)%(Extension)" />
     <InternalsVisibleTo Include="VR.KeepAwake.Tests" />
+  </ItemGroup>
+
+  <!-- Published next to the exe. Shown in the solution's Scripts folder rather than in this project. -->
+  <ItemGroup>
+    <None Include="..\..\Scripts\*.cmd" Link="%(Filename)%(Extension)" Visible="false" CopyToOutputDirectory="Never" CopyToPublishDirectory="PreserveNewest" ExcludeFromSingleFile="true" />
   </ItemGroup>
 
 </Project>

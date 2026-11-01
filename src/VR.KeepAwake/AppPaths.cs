@@ -10,7 +10,4 @@ internal static class AppPaths
         "VR.KeepAwake");
 
     public static readonly string SettingsFile = Path.Combine(DataDirectory, "appsettings.json");
-
-    /// <summary>Based on the exe location because autostart launches the app with an unrelated working directory.</summary>
-    public static string Asset(string fileName) => Path.Combine(AppContext.BaseDirectory, "Assets", fileName);
 }

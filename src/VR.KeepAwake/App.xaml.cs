@@ -1,4 +1,4 @@
-using System.Threading;
+﻿using System.Threading;
 using System.Windows;
 using System.Windows.Interop;
 using System.Windows.Media;
@@ -13,6 +13,9 @@ namespace VR.KeepAwake;
 
 public partial class App : Application
 {
+    /// <summary>Used by the install scripts to close the running copy.</summary>
+    private const string ExitArgument = "--exit";
+
     private Mutex? _singleInstance;
     private AppController? _controller;
     private TrayIcon? _tray;
@@ -21,6 +24,13 @@ public partial class App : Application
     protected override void OnStartup(StartupEventArgs e)
     {
         base.OnStartup(e);
+
+        if (e.Args.Contains(ExitArgument))
+        {
+            TrayIcon.RequestExit();
+            Shutdown();
+            return;
+        }
 
         _singleInstance = new Mutex(initiallyOwned: true, @"Local\VR.KeepAwake", out var isFirstInstance);
         if (!isFirstInstance)

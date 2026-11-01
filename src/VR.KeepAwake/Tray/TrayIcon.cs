@@ -1,4 +1,4 @@
-using System.Runtime.InteropServices;
+﻿using System.Runtime.InteropServices;
 using System.Windows.Threading;
 using static VR.KeepAwake.Tray.NativeMethods;
 
@@ -57,6 +57,16 @@ internal sealed class TrayIcon : IDisposable
 
     public event Action? ExitRequested;
 
+    /// <summary>Asks the running copy to exit, so that it removes its icon. Does nothing if there isn't one.</summary>
+    public static void RequestExit()
+    {
+        var window = FindWindow(WindowClassName, null);
+        if (window != 0)
+        {
+            PostMessage(window, WM_CLOSE, 0, 0);
+        }
+    }
+
     public void SetActive(bool isActive)
     {
         _isActive = isActive;
@@ -89,7 +99,7 @@ internal sealed class TrayIcon : IDisposable
 
     private static nint LoadTrayIcon(string fileName, int size)
     {
-        var icon = LoadImage(0, AppPaths.Asset(fileName), IMAGE_ICON, size, size, LR_LOADFROMFILE);
+        var icon = EmbeddedIcon.Load(fileName, size);
         if (icon != 0)
         {
             return icon;
@@ -195,6 +205,13 @@ internal sealed class TrayIcon : IDisposable
             {
                 _addAttempts = 0;
                 AddIcon();
+                return 0;
+            }
+
+            // By default this would destroy the window and leave the process running without an icon.
+            if (message == WM_CLOSE)
+            {
+                Post(ExitRequested);
                 return 0;
             }
         }

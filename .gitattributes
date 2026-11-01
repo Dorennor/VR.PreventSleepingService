@@ -3,6 +3,9 @@
 ###############################################################################
 * text=auto
 
+# cmd.exe can misread labels in batch files with LF line endings.
+*.cmd text eol=crlf
+
 ###############################################################################
 # Set default behavior for command prompt diff.
 #

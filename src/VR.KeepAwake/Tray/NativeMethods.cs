@@ -1,10 +1,11 @@
-using System.Runtime.InteropServices;
+﻿using System.Runtime.InteropServices;
 
 namespace VR.KeepAwake.Tray;
 
 internal static partial class NativeMethods
 {
     public const int WM_NULL = 0x0000;
+    public const int WM_CLOSE = 0x0010;
     public const int WM_APP = 0x8000;
     public const int WM_LBUTTONUP = 0x0202;
     public const int WM_RBUTTONUP = 0x0205;
@@ -26,8 +27,6 @@ internal static partial class NativeMethods
     public const uint TPM_NONOTIFY = 0x0080;
     public const uint TPM_RETURNCMD = 0x0100;
 
-    public const uint IMAGE_ICON = 1;
-    public const uint LR_LOADFROMFILE = 0x0010;
     public const int SM_CXSMICON = 49;
     public const nint IDI_APPLICATION = 32512;
 
@@ -103,6 +102,9 @@ internal static partial class NativeMethods
         nint instance,
         nint parameter);
 
+    [LibraryImport("user32.dll", EntryPoint = "FindWindowW", StringMarshalling = StringMarshalling.Utf16)]
+    public static partial nint FindWindow(string className, string? windowName);
+
     [LibraryImport("user32.dll", EntryPoint = "DefWindowProcW")]
     public static partial nint DefWindowProc(nint window, uint message, nint wParam, nint lParam);
 
@@ -117,8 +119,15 @@ internal static partial class NativeMethods
     [LibraryImport("user32.dll", EntryPoint = "RegisterWindowMessageW", StringMarshalling = StringMarshalling.Utf16)]
     public static partial uint RegisterWindowMessage(string name);
 
-    [LibraryImport("user32.dll", EntryPoint = "LoadImageW", StringMarshalling = StringMarshalling.Utf16)]
-    public static partial nint LoadImage(nint instance, string name, uint type, int width, int height, uint flags);
+    [LibraryImport("user32.dll")]
+    public static partial nint CreateIconFromResourceEx(
+        ReadOnlySpan<byte> image,
+        int imageSize,
+        [MarshalAs(UnmanagedType.Bool)] bool fIcon,
+        int version,
+        int width,
+        int height,
+        uint flags);
 
     [LibraryImport("user32.dll", EntryPoint = "LoadIconW")]
     public static partial nint LoadIcon(nint instance, nint name);
